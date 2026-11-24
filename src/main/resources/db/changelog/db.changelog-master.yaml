@@ -1,0 +1,9 @@
+databaseChangeLog:
+  - include:
+      file: db/changelog/changes/001-create-shipment.sql
+  - include:
+      file: db/changelog/changes/002-create-shipment-income-and-costs.sql
+  - include:
+      file: db/changelog/changes/003-seed-initial-data.sql
+  - include:
+      file: db/changelog/changes/004-seed-more-entries.sql

@@ -1,0 +1,57 @@
+<form [formGroup]="form" (ngSubmit)="handleFormSubmit(formDirective)" #formDirective="ngForm">
+
+  <div class="container py-4">
+    <div class="row mb-3 align-items-center">
+      <label for="shipmentNumber" class="col-auto fw-bold">Shipment ID</label>
+      <div class="col-auto">
+        <mat-form-field appearance="outline" subscriptSizing="dynamic" class="shipment-select">
+          <mat-select id="shipmentNumber" formControlName="shipmentNumber" placeholder="Select a shipment"
+                      (selectionChange)="openShipment($event.value)">
+            @for (shipment of shipments; track shipment.shipmentNumber) {
+              <mat-option [value]="shipment.shipmentNumber">{{ shipment.shipmentNumber }}</mat-option>
+            }
+          </mat-select>
+        </mat-form-field>
+      </div>
+    </div>
+    <fieldset class="group-box mb-4">
+      <legend>Income &amp; Outcome</legend>
+      <div class="row align-items-center g-3">
+        <div class="col-md-4">
+          <div class="row align-items-center">
+            <label for="income" class="col-4 col-form-label fw-bold">Income</label>
+            <div class="col-8">
+              <app-amount-field inputId="income" formControlName="income" />
+            </div>
+          </div>
+        </div>
+        <div class="col-md-5">
+          <fieldset class="group-box">
+            <legend>Costs</legend>
+            <div class="row align-items-center mb-2">
+              <label for="cost" class="col-5 col-form-label fw-bold">Cost</label>
+              <div class="col-7">
+                <app-amount-field inputId="cost" formControlName="cost" />
+              </div>
+            </div>
+            <div class="row align-items-center">
+              <label for="additionalCost" class="col-5 col-form-label fw-bold">Additional Cost</label>
+              <div class="col-7">
+                <app-amount-field inputId="additionalCost" formControlName="additionalCost" />
+              </div>
+            </div>
+          </fieldset>
+          @if (formDirective.submitted && form.hasError('allZero')) {
+            <div class="text-danger small mt-2">Income, cost or additional cost must be greater than zero</div>
+          }
+        </div>
+        <div class="col-3 d-flex justify-content-end align-self-end">
+          <button mat-flat-button type="submit" color="primary">Calculate</button>
+        </div>
+      </div>
+    </fieldset>
+
+   <app-entries-table [shipment]="totals" />
+
+</div>
+</form>

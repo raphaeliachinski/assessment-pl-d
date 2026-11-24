@@ -1,0 +1,18 @@
+$topbar-height: 128px;
+$sidebar-width: 240px;
+.topbar {
+  height: $topbar-height;
+  flex-shrink: 0;
+}
+.brand {
+  width: $sidebar-width;
+  flex-shrink: 0;
+}
+.brand-logo {
+  width: 100%;
+  max-height: $topbar-height - 16px;
+  object-fit: contain;
+}
+.sidebar {
+  width: $sidebar-width;
+}

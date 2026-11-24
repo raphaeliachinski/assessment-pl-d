@@ -1,0 +1,37 @@
+$section-border: 2px solid var(--bs-gray-200);
+
+
+.shipment-select {
+  width: 200px;
+  --mat-form-field-container-height: 40px;
+  --mat-form-field-container-vertical-padding: 8px;
+  --mdc-outlined-text-field-outline-width: 1px;
+  --mdc-outlined-text-field-focus-outline-width: 1px;
+  --mdc-outlined-text-field-outline-color: #ccc;
+  --mdc-outlined-text-field-hover-outline-color: #ccc;
+  --mdc-outlined-text-field-focus-outline-color: #ccc;
+}
+
+
+
+.group-box {
+  border: $section-border;
+  border-radius: 2px;
+  padding: 0.5rem 1rem 1rem;
+
+  > legend {
+    float: none;
+    width: auto;
+    padding: 0 0.5rem;
+    margin-bottom: 0;
+    font-size: 1rem;
+  }
+  .row {
+    align-items: flex-start !important;
+  }
+
+  .col-form-label {
+    padding-top: calc((40px - 1.5em) / 2);
+    padding-bottom: 0;
+  }
+}

@@ -1,0 +1,6 @@
+:host {
+  --custom-table-header-bg: #f5f5f5;
+}
+.mat-mdc-header-cell {
+  background-color: var(--custom-table-header-bg);
+}

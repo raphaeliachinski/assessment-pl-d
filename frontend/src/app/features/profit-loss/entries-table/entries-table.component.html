@@ -1,0 +1,43 @@
+<div class="row">
+  <div class="col-12">
+    <div class="table-scroll border">
+      <table mat-table [dataSource]="dataSource" matSort class="w-100">
+
+        <ng-container matColumnDef="income">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Income</th>
+          <td mat-cell *matCellDef="let row">{{ row.income | number:'1.2-2' }}</td>
+          <td mat-footer-cell *matFooterCellDef class="fw-bold">
+            <span class="text-body-secondary me-2">Total</span>{{ totals?.totalIncome | number:'1.2-2' }}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="totalCosts">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Total Costs</th>
+          <td mat-cell *matCellDef="let row">{{ row.totalCosts | number:'1.2-2' }}</td>
+          <td mat-footer-cell *matFooterCellDef class="fw-bold">{{ totals?.totalCosts | number:'1.2-2' }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="profitOrLoss">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Profit or Loss</th>
+          <td mat-cell *matCellDef="let row" [class.text-danger]="row.profitOrLoss < 0">
+            {{ row.profitOrLoss | number:'1.2-2' }}
+          </td>
+          <td mat-footer-cell *matFooterCellDef class="fw-bold" [class.text-danger]="(totals?.profitOrLoss ?? 0) < 0">
+            {{ totals?.profitOrLoss | number:'1.2-2' }}
+          </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="columns; sticky: true"></tr>
+        <tr mat-row *matRowDef="let row; columns: columns"></tr>
+
+        <tr mat-footer-row *matFooterRowDef="columns; sticky: true" [class.d-none]="!dataSource.data.length"></tr>
+
+        <tr class="mat-mdc-row" *matNoDataRow>
+          <td class="mat-mdc-cell text-center text-body-secondary" [attr.colspan]="columns.length">
+            No entries for this shipment yet
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>

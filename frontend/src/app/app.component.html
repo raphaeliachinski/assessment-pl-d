@@ -1,0 +1,26 @@
+
+<div class="d-flex flex-column vh-100">
+
+  <header class="topbar d-flex align-items-stretch border-bottom bg-body shadow-sm">
+    <a routerLink="/" class="brand d-flex align-items-center px-3 border-end text-decoration-none">
+      <img src="assets/logo.svg" alt="Dachser" class="brand-logo">
+    </a>
+  </header>
+  <div class="d-flex flex-grow-1 overflow-hidden">
+    <nav class="sidebar flex-shrink-0 p-3 bg-body-tertiary border-end">
+      <ul class="nav nav-pills flex-column">
+        <li class="nav-item">
+          <a [routerLink]="calculateProfitLink()" class="nav-link" [class.active]="isCalculateProfitActive()"
+             [attr.aria-current]="isCalculateProfitActive() ? 'page' : null">
+            <i class="bi bi-calculator me-2"></i>Calculate Profit
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <main class="flex-grow-1 overflow-auto p-4">
+      <router-outlet />
+    </main>
+  </div>
+
+</div>

@@ -1,0 +1,12 @@
+:host {
+  display: block;
+
+  --mat-form-field-container-height: 40px;
+  --mat-form-field-container-vertical-padding: 8px;
+  --mdc-outlined-text-field-outline-width: 1px;
+  --mdc-outlined-text-field-focus-outline-width: 1px;
+  --mdc-outlined-text-field-outline-color: #ccc;
+  --mdc-outlined-text-field-hover-outline-color: #ccc;
+  --mdc-outlined-text-field-focus-outline-color: #ccc;
+  --mdc-outlined-text-field-disabled-outline-color: #ccc;
+}

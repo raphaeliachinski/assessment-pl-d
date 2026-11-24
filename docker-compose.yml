@@ -1,0 +1,6 @@
+services:
+  profit-and-loss:
+    build: .
+    image: profit-and-loss:latest
+    ports:
+      - "8080:8080"
