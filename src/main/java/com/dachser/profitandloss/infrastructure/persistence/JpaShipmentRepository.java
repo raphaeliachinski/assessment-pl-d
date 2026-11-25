@@ -34,7 +34,7 @@ public class JpaShipmentRepository implements ShipmentRepository {
 
     @Override
     public List<Shipment> findAll() {
-        return springDataRepository.findAll();
+        return springDataRepository.findAllByOrderByShipmentNumberAsc();
     }
 
     @Override

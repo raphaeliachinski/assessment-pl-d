@@ -6,7 +6,6 @@ import com.dachser.profitandloss.domain.repository.ShipmentRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.Comparator;
 import java.util.List;
 
 @Service
@@ -25,7 +24,6 @@ public class ShipmentService {
     public List<ShipmentResponse> findAll() {
         return shipmentRepository.findAll().stream()
                 .map(mapper::toResponse)
-                .sorted(Comparator.comparing(ShipmentResponse::shipmentNumber))
                 .toList();
     }
 }
