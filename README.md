@@ -8,13 +8,12 @@ The project contais a REST API using Spring Boot and a web page using Angular.
 
 ## Prerequisites
 
-| Tool | Version |
-|---|---|
-| Java (JDK) | 17 |
-| Maven | 3.9.3. No installation needed: the project ships the Maven Wrapper (`mvnw`), which downloads this version. |
-| Node.js | 21.0.0. Only needed to work on the frontend with `npm start`; the Maven build downloads it automatically. |
-
-
+| Tool              | Version                                                                                                    |
+|-------------------|------------------------------------------------------------------------------------------------------------|
+| Java (JDK)        | 17                                                                                                         |
+| Maven             | 3.9.3. No installation needed: the project ships the Maven Wrapper (`mvnw`), which downloads this version. |
+| Node.js           | 21.0.0. Only needed to work on the frontend with `npm start`; the Maven build downloads it automatically.  |
+| Docker (Optional) | To run everything in a container, without the tools above.                                                 |                                                 |
 
 ## Running the application
 
@@ -234,6 +233,7 @@ Layered design with practical domain modeling:
 
 - Spring Boot 3.1.5, Java 17, Maven 3.9.3, mentioned as required versions. 
 - Liquibase manages the schema and Hibernate only checks that the entities match it.
+- DDD Layered architecture. Domain entities hold no business rules, only the stored state. The rules are in the ProfitLossCalculator domain service.
 - Domain entities are also the JPA entities. A practical choice given the size of the domain: at the cost of the domain depending on `jakarta.persistence`.
 
 
