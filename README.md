@@ -175,9 +175,16 @@ Example of a `400`:
 
 ## Running Tests
 
+Backend. Jacoco generates the coverage report in `target/site/jacoco/index.html`
+
 ```bash
-./mvnw test
+# test phase executes the minimum coverage check of 80% of lines
+./mvnw test 
+# to individually check the minimum coverage
+./mvnw verify 
 ```
+
+
 
 Frontend. The coverage report is generated in `frontend/coverage/frontend/index.html`.
 
