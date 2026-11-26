@@ -21,7 +21,7 @@ The project contais a REST API using Spring Boot and a web page using Angular.
 ### Docker container (requires docker installed)
 
 ```
-docker-compose up
+docker-compose up --build
 ```
 Open `http://localhost:8080`.
 
